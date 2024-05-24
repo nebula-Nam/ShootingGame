@@ -5,6 +5,7 @@ namespace ShootingGame
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public void test()
