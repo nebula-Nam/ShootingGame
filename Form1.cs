@@ -12,7 +12,7 @@ namespace ShootingGame
             InitializeComponent();
             // 메인 클래스입니다 테스트용으로 아래에 코드를 써도 괜찮습니다
             // 혹시나 날려버리지않게 조심해주세요
-
+            // test
 
             
         }
