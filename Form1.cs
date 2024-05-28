@@ -10,36 +10,16 @@ namespace ShootingGame
         public Form1()
         {
             InitializeComponent();
-
         }
-
-        /*
-        // 이미지를 화면에 출력할수있게하는 클래스
-        void LoadImage()
-        {
-            try
-            {
-                // 이미지 경로 설정 (절대 경로 또는 상대 경로)
-                string imagePath = "D:\\work\\ShootingGame\\images\\배경.png";
-
-                // 이미지 로드
-                pictureBox1.Image = Image.FromFile(imagePath);
-
-                // 이미지 크기를 PictureBox에 맞게 조정
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            catch (Exception ex)
-            {
-                // 이미지 로드 실패 시 예외 처리
-                MessageBox.Show("이미지를 로드하는 동안 오류가 발생했습니다: " + ex.Message);
-            }
-        }
-        */
 
         void GameStart(){// 게임 시작 화면을 나타내는 클래스(김현민)}
         void GameOver(){// 게임 오버화면 몇초뒤 게임시작 화면으로 넘어간다 (김현민)}
         void GameEnd(){// 게임의 엔딩(클리어)를 화면에 나타내는 클래스 (김현민)}
-        
+
+        void ShowInfo()
+        {
+            // HP, SP_item, attack_stage를 단순 글씨가아닌 이미지를 통해서 보여준다. (김현민)
+        }
         void CollisionDetection()
         {
             // 충돌 확인 메서드 (김현민)
@@ -59,6 +39,7 @@ namespace ShootingGame
         {
             // 플레이어 일반공격을 담당하는 클래스 (남준혁)
             // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
+            // 공격은 스페이스바를 통해서 공격을할수있습니다
             // 플레이어의 공격은 4단계로 구성되어있습니다
             // 공격 단계는 매개변수 attack_stage를 통해서 받아서 단계에 맞는공격을 발사한다. (이름변경해도 괜찮고 아에 공격 단계말고 아이템을 먹을때마다 한단계씩 추가해도 괜찮습니다)
             // 1단계 공격(기본공격) : 앞으로 한개의 총알만 발사합니다
@@ -86,6 +67,7 @@ namespace ShootingGame
             // 플레이어의 움직임을 담당하는 클래스 (이교현)
             // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
             // 키보드에서 wasd 혹은 화살표를 감지하고 
+            // wasd만 감지하거나 wasd와 화살표를 둘다 감지해서 사용할수있으면 좋겠습니다(필수x)
             // switch case문에따라서 해당방향에 맞게 이동할수있게해야합니다
             // 플레이어가 배경을 탈출하지 못하도록 벽보다 더 이동할려고하면 이동하지못하게 만들어야합니다
             // 조건식으로 특정좌표까지만 이동할수있게 해서 막을수있습니다
@@ -96,7 +78,6 @@ namespace ShootingGame
             // 체력이 0이될때 사라지게 하는 클래스 (이교현)
             // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
             // 해당 객체의 체력이 0이 된다면 아에 삭제해버리면됩니다.
-            
         }
 
         void EntityInformation()
@@ -105,7 +86,7 @@ namespace ShootingGame
             // 해당 클래스를 상속을 통해서 짜야합니다
             
             // Entity클래스 가장 높은 부모클래스
-            // 필요한 내용 : int HP(체력), int SNum(고유번호)
+            // 필요한 내용 : int HP(체력), int SNum(고유번호), boolean Invincible(무적여부), boolean Poison(독 여부)
             // Entity를 상속하는 자식클래스
             // Player 클래스 
             // 필요한 내용 : int attack_stage(공격단계), int SP_Item(스페셜 아이템)
@@ -113,21 +94,21 @@ namespace ShootingGame
             // 필요한 내용 : int mob_type(몹 타입 종류가 3종류가있기때문에 기입), 
             // Boss 클래스
             // 필요한 내용 : int phase(보스의 페이즈 1,2,3까지 페이즈가 나눠져있기때문에 구성)
-            // 내용들이 추가될수있습니다
+            // 내용이 추가될수있습니다
 
         }
 
-        void Mob1()
+        void Mob_Ant()
         {
             // 몹(개미)을 담당하는 클래스 (김현민)
         }
 
-        void Mob2()
+        void Mob_Mogi()
         {
             // 몹(모기)을 담당하는 클래스 (김현민)
         }
 
-        void Mob3()
+        void Mob_DragonFly()
         {
             // 몹(잠자리)을 담당하는 클래스 (김현민)
         }
@@ -142,8 +123,6 @@ namespace ShootingGame
         {
             // 보스 패턴을 담당하는 클래스 (김현민)
         }
-
+        
     }
-
-
 }
