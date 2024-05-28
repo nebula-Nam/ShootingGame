@@ -10,6 +10,11 @@ namespace ShootingGame
         public Form1()
         {
             InitializeComponent();
+            // 메인 클래스입니다 테스트용으로 아래에 코드를 써도 괜찮습니다
+            // 혹시나 날려버리지않게 조심해주세요
+
+
+            
         }
 
         void GameStart(){// 게임 시작 화면을 나타내는 클래스(김현민)}
@@ -25,6 +30,11 @@ namespace ShootingGame
             // 충돌 확인 메서드 (김현민)
         }
 
+        void MainTimer()
+        {
+            // 모두 다다르게 타이머를 돌릴수도있지만 작업을 줄이기위해서 최대한 타이머 한개로 통일하여 진행. 메인타이머 (김현민)
+        }
+        
         void MoveBackground()
         {
             // 배경을 움직이는 클래스 (이지원)
