@@ -89,6 +89,11 @@ namespace ShootingGame
             // 체력이 0이될때 사라지게 하는 클래스 (이교현)
             // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
             // 해당 객체의 체력이 0이 된다면 아에 삭제해버리면됩니다.
+            if (playerHP <= 0)
+{
+    // 플레이어의 체력이 0 이하이면 사라지도록 처리
+    Disapper();
+}
         }
 
         void EntityInformation()
