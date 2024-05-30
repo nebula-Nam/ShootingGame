@@ -73,15 +73,52 @@ namespace ShootingGame
             // 10초가 지나간다면 다시 원래 단계의 일반공격으로 돌아오게되며 스페셜아이템(Sp_Item)의 갯수를 한개 줄입니다
         }
 
-        void PlayerMove()
+        void PlayerMove() // 이교현
         {
-            // 플레이어의 움직임을 담당하는 클래스 (이교현)
-            // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
-            // 키보드에서 wasd 혹은 화살표를 감지하고 
-            // wasd만 감지하거나 wasd와 화살표를 둘다 감지해서 사용할수있으면 좋겠습니다(필수x)
-            // switch case문에따라서 해당방향에 맞게 이동할수있게해야합니다
-            // 플레이어가 배경을 탈출하지 못하도록 벽보다 더 이동할려고하면 이동하지못하게 만들어야합니다
-            // 조건식으로 특정좌표까지만 이동할수있게 해서 막을수있습니다
+             private void Form1_KeyDown(object sender, KeyEventArgs e)
+ {
+     PlayerMove(e);
+ }
+
+ private void PlayerMove(KeyEventArgs e)
+ {
+     int newX = player.Location.X;
+     int newY = player.Location.Y;
+
+     // WASD와 화살표 키 감지
+     switch (e.KeyCode)
+     {
+         case Keys.W:
+         case Keys.Up:
+             newY -= moveSpeed;
+             break;
+         case Keys.S:
+         case Keys.Down:
+             newY += moveSpeed;
+             break;
+         case Keys.A:
+         case Keys.Left:
+             newX -= moveSpeed;
+             break;
+         case Keys.D:
+         case Keys.Right:
+             newX += moveSpeed;
+             break;
+     }
+
+     // 이동 범위 제한
+     if (newX < 0) newX = 0;
+     if (newY < 0) newY = 0;
+     if (newX > this.ClientSize.Width - player.Width) newX = this.ClientSize.Width - player.Width;
+     if (newY > this.ClientSize.Height - player.Height) newY = this.ClientSize.Height - player.Height;
+
+     player.Location = new Point(newX, newY);
+ }
+
+private void Form1_Load(object sender, EventArgs e)
+ {
+     this.ActiveControl = player;
+ }
         }
 
         void Disapper()
