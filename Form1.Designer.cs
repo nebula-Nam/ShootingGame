@@ -6,7 +6,7 @@
         ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        private PictureBox player;
         /// <summary>
         ///  Clean up any resources being used.
         /// </summary>
@@ -51,6 +51,34 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+
+             this.player = new System.Windows.Forms.PictureBox(); // 이교현 플레이어 움직임
+ ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+ this.SuspendLayout();
+ // 
+ // player
+ // 
+ this.player.BackColor = System.Drawing.Color.Transparent; // 투명 배경 설정
+ this.player.Image = Properties.Resources.플레이어; // 투명 배경의 이미지 사용
+ this.player.Location = new System.Drawing.Point(150, 150); // 초기 위치 설정
+ this.player.Name = "player";
+ this.player.Size = new System.Drawing.Size(50, 50); // 플레이어 크기 설정
+ this.player.SizeMode = PictureBoxSizeMode.AutoSize;
+ this.player.TabIndex = 0;
+ this.player.TabStop = false;
+ // 
+ // Form1
+ // 
+ this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+ this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+ this.ClientSize = new System.Drawing.Size(400, 400);
+ this.Controls.Add(this.player);
+ this.Name = "Form1";
+ this.Text = "Shooting Game";
+ this.Load += new System.EventHandler(this.Form1_Load);
+ this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+ ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+ this.ResumeLayout(false);
         }
 
         #endregion
