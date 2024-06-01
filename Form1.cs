@@ -76,32 +76,32 @@ namespace ShootingGame
         void PlayerMove() // 이교현
         {
              private void Form1_KeyDown(object sender, KeyEventArgs e)
- {
-     PlayerMove(e);
- }
+             {
+                 PlayerMove(e);
+             }
 
- private void PlayerMove(KeyEventArgs e)
- {
-     int newX = player.Location.X;
-     int newY = player.Location.Y;
+         private void PlayerMove(KeyEventArgs e)
+        {
+             int newX = player.Location.X;
+             int newY = player.Location.Y;
 
-     // WASD와 화살표 키 감지
-     switch (e.KeyCode)
-     {
-         case Keys.W:
-         case Keys.Up:
-             newY -= moveSpeed;
-             break;
-         case Keys.S:
-         case Keys.Down:
+             // WASD와 화살표 키 감지
+        switch (e.KeyCode)
+             {
+                 case Keys.W:
+                 case Keys.Up:
+                 newY -= moveSpeed;
+                 break;
+        case Keys.S:
+        case Keys.Down:
              newY += moveSpeed;
              break;
-         case Keys.A:
-         case Keys.Left:
+        case Keys.A:
+        case Keys.Left:
              newX -= moveSpeed;
              break;
-         case Keys.D:
-         case Keys.Right:
+        case Keys.D:
+        case Keys.Right:
              newX += moveSpeed;
              break;
      }
@@ -113,13 +113,13 @@ namespace ShootingGame
      if (newY > this.ClientSize.Height - player.Height) newY = this.ClientSize.Height - player.Height;
 
      player.Location = new Point(newX, newY);
- }
+     }
 
-private void Form1_Load(object sender, EventArgs e)
- {
-     this.ActiveControl = player;
- }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+             this.ActiveControl = player;
         }
+    }
 
         void Disapper()
         {
@@ -127,10 +127,10 @@ private void Form1_Load(object sender, EventArgs e)
             // 아래 주석은 참고만해주세요 무조건적으로 따라하실필요는 없습니다
             // 해당 객체의 체력이 0이 된다면 아에 삭제해버리면됩니다.
             if (playerHP <= 0)
-{
-    // 플레이어의 체력이 0 이하이면 사라지도록 처리
-    Disapper();
-}
+        {
+        // 플레이어의 체력이 0 이하이면 사라지도록 처리
+        Disapper();
+            }
         }
 
         void EntityInformation()
